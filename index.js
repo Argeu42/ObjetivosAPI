@@ -92,7 +92,7 @@ app.post("/objetivos", (req, res) => {
     console.log("Chamou post", req.body);
     const { objetivo } = req.body;
     client.query(
-      "INSERT INTO Usuarios (objetivo) VALUES ($1) RETURNING * ",
+      "INSERT INTO Objetivos (objetivo) VALUES ($1) RETURNING * ",
       [objetivo],
       function (err, result) {
         if (err) {
